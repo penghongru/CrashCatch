@@ -134,7 +134,7 @@ object CrashObservable : Thread.UncaughtExceptionHandler {
         try {
             val fileName = "crash - time${formatter.format(Date())}.log"
             if (Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED) {
-                val path = "${Environment.getExternalStorageDirectory()}/crash/"
+                val path = "${Environment.getExternalStorageDirectory()}/${ApplicationHolder.context().getString(R.string.app_name)}/"
                 val dir = File(path)
                 if (!dir.exists()) {
                     dir.mkdirs()
